@@ -1,15 +1,11 @@
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import vitePluginStylusAlias from 'vite-plugin-stylus-alias';
-import { viteExternalsPlugin } from 'vite-plugin-externals';
-
-// const HOST = '0.0.0.0';
 
 export default () => {
   return defineConfig({
     base: './',
     server: {
-      // host: HOST,
       port: process.env.PORT,
     },
     resolve: {
@@ -24,10 +20,6 @@ export default () => {
 
       // 处理 stylus alias
       vitePluginStylusAlias(),
-
-      viteExternalsPlugin({
-        'cube-ui': 'cube',
-      }),
     ],
   });
 };

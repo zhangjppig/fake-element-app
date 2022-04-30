@@ -14,9 +14,6 @@ module.exports = defineConfig({
         'cube-ui': 'cube-ui/lib',
       },
     },
-    externals: {
-      'cube-ui': 'cube',
-    },
     devServer: {
       host: 'localhost',
     },
