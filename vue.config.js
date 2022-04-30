@@ -1,22 +1,24 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require('@vue/cli-service');
+
 module.exports = defineConfig({
-  transpileDependencies: true,
-
-  css: {
-    loaderOptions: {
-      stylus: {
-        'resolve url': true,
-        'import': [
-          './src/theme'
-        ]
-      }
-    }
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+    },
   },
-
-  pluginOptions: {
-    'cube-ui': {
-      postCompile: true,
-      theme: true
-    }
-  }
-})
+  outputDir: 'dist',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'cube-ui': 'cube-ui/lib',
+      },
+    },
+    externals: {
+      'cube-ui': 'cube',
+    },
+    devServer: {
+      host: 'localhost',
+    },
+  },
+});
