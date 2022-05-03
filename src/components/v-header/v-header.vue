@@ -34,17 +34,17 @@
 </template>
 
 <script type="text/ecmascript-6">
-import SupportIco from "components/support-ico/support-ico";
+import SupportIco from 'components/support-ico/support-ico';
 
 export default {
-  name: "v-header",
+  name: 'v-header',
   props: {
     seller: {
       type: Object,
       default() {
         return {};
-      },
-    },
+      }
+    }
   },
   methods: {
     showDetail() {
@@ -52,15 +52,15 @@ export default {
         this.headerDetailComp ||
         this.$createHeaderDetail({
           $props: {
-            seller: "seller",
-          },
+            seller: 'seller'
+          }
         });
       this.headerDetailComp.show();
-    },
+    }
   },
   components: {
-    SupportIco,
-  },
+    SupportIco
+  }
 };
 </script>
 

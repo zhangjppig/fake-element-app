@@ -1,15 +1,30 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <VHeader :seller="seller"></VHeader>
   </div>
 </template>
 
 <script>
-import VHeader from "components/v-header/v-header";
+import VHeader from 'components/v-header/v-header';
+import { getSeller } from 'api';
 export default {
-  name: "App",
+  name: 'App',
   components: {
     VHeader,
+  },
+  data() {
+    return {
+      seller: {},
+    };
+  },
+  created() {
+   this._getSeller();
+  },
+  methods: {
+    async _getSeller() {
+      const seller = await getSeller();
+      this.seller = seller;
+    },
   },
 };
 </script>
