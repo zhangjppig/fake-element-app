@@ -10,22 +10,22 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
-      name: "Tom",
-    };
+      name: 'Tom'
+    }
   },
   methods: {
     sayHi() {
       this.$createDialog({
-        type: "alert",
-        title: "Hello",
-        content: this.name,
-      }).show();
-    },
-  },
-};
+        type: 'alert',
+        title: 'Hello',
+        content: this.name
+      }).show()
+    }
+  }
+}
 </script>
 
 <style>
