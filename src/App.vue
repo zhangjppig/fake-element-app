@@ -11,11 +11,17 @@
 import VHeader from 'components/v-header/v-header';
 import { getSeller } from 'api';
 import Tab from './components/tab/tab.vue';
+import Goods from './components/goods';
+import Seller from './components/seller';
+import Ratings from './components/ratings';
 export default {
   name: 'App',
   components: {
     VHeader,
     Tab,
+    Goods,
+    Seller,
+    Ratings,
   },
   data() {
     return {
@@ -26,12 +32,24 @@ export default {
     tabs() {
       return [{
         label: '商品',
+        component: Goods,
+        data: {
+         seller: this.seller,
+        }
       },
       {
         label: '评论',
+        component: Ratings,
+        data: {
+         seller: this.seller,
+        },
       },
       {
         label: '商家',
+        component: Seller,
+        data: {
+          seller: this.seller,
+        }
       },
       ];
     },
