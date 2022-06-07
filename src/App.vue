@@ -11,9 +11,9 @@
 import VHeader from 'components/v-header/v-header';
 import { getSeller } from 'api';
 import Tab from './components/tab/tab.vue';
-import Goods from './components/goods';
-import Seller from './components/seller';
-import Ratings from './components/ratings';
+import Goods from './components/goods/goods.vue';
+import Seller from './components/seller/seller.vue';
+import Ratings from './components/ratings/ratings.vue';
 export default {
   name: 'App',
   components: {
