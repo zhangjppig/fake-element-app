@@ -31,12 +31,16 @@
           </ul>
         </cube-scroll-nav-panel>
       </cube-scroll-nav>
+      <div>
+        <shop-cart :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shop-cart>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { getGoods } from 'api';
+import shopCart from '../shop-cart/shop-cart.vue';
 export default {
   name: 'goods',
   props: {
@@ -56,6 +60,11 @@ export default {
       },
     };
   },
+  computed: {
+    seller() {
+      return this.data.seller;
+    },
+  },
   methods: {
     async fetch() {
       const goods = await getGoods();
@@ -67,6 +76,9 @@ export default {
     //   });
     // },
   },
+  components: {
+    shopCart,
+  }
 };
 </script>
 
